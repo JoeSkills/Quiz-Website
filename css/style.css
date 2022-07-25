@@ -55,6 +55,7 @@ html {
   align-items: center;
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
+  border: none;
 }
 
 .prev {
@@ -69,6 +70,7 @@ html {
   align-items: center;
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
+  border: none;
 }
 
 .result {
@@ -99,6 +101,7 @@ html {
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
   margin: 0 auto;
+  border: none;
 }
 
 .winner-bg {
