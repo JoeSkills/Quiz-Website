@@ -51,7 +51,8 @@ function iterate(id) {
   const question = document.getElementById('question');
 
   // Setting the question text
-  question.innerText = Questions[id].q;
+  var num = Number(id) + 1;
+  question.innerText = num + '. \n' + Questions[id].q;
 
   // Getting the options
   const op1 = document.getElementById('op1');
@@ -60,10 +61,10 @@ function iterate(id) {
   const op4 = document.getElementById('op4');
 
   // Providing option text
-  op1.innerText = Questions[id].a[0].text;
-  op2.innerText = Questions[id].a[1].text;
-  op3.innerText = Questions[id].a[2].text;
-  op4.innerText = Questions[id].a[3].text;
+  op1.innerText = 'A    ' + Questions[id].a[0].text;
+  op2.innerText = 'B    ' + Questions[id].a[1].text;
+  op3.innerText = 'C    ' + Questions[id].a[2].text;
+  op4.innerText = 'D    ' + Questions[id].a[3].text;
 
   // Providing the true or false value to the options
   op1.value = Questions[id].a[0].isCorrect;
@@ -80,6 +81,19 @@ function iterate(id) {
     op3.style.backgroundColor = 'lightskyblue';
     op4.style.backgroundColor = 'lightskyblue';
     selected = op1.value;
+    if (selected == true) {
+      result[0].innerHTML = 'Correct';
+      result[0].style.color = 'green';
+      winner[0].style.display = 'block';
+      lose[0].style.display = 'none';
+      op1.style.backgroundColor = 'lightGreen';
+    } else {
+      result[0].innerHTML = 'Wrong';
+      result[0].style.color = 'red';
+      lose[0].style.display = 'block';
+      winner[0].style.display = 'none';
+      op1.style.backgroundColor = 'Red';
+    }
   });
 
   // Show selection for op2
@@ -89,6 +103,19 @@ function iterate(id) {
     op3.style.backgroundColor = 'lightskyblue';
     op4.style.backgroundColor = 'lightskyblue';
     selected = op2.value;
+    if (selected == true) {
+      result[0].innerHTML = 'Correct';
+      result[0].style.color = 'green';
+      winner[0].style.display = 'block';
+      lose[0].style.display = 'none';
+      op2.style.backgroundColor = 'lightGreen';
+    } else {
+      result[0].innerHTML = 'Wrong';
+      result[0].style.color = 'red';
+      lose[0].style.display = 'block';
+      winner[0].style.display = 'none';
+      op2.style.backgroundColor = 'Red';
+    }
   });
 
   // Show selection for op3
@@ -98,6 +125,19 @@ function iterate(id) {
     op3.style.backgroundColor = 'aqua';
     op4.style.backgroundColor = 'lightskyblue';
     selected = op3.value;
+    if (selected == true) {
+      result[0].innerHTML = 'Correct';
+      result[0].style.color = 'lightGreen';
+      winner[0].style.display = 'block';
+      lose[0].style.display = 'none';
+      op3.style.backgroundColor = 'lightGreen';
+    } else {
+      result[0].innerHTML = 'Wrong';
+      result[0].style.color = 'red';
+      lose[0].style.display = 'block';
+      winner[0].style.display = 'none';
+      op3.style.backgroundColor = 'Red';
+    }
   });
 
   // Show selection for op4
@@ -107,23 +147,18 @@ function iterate(id) {
     op3.style.backgroundColor = 'lightskyblue';
     op4.style.backgroundColor = 'aqua';
     selected = op4.value;
-  });
-
-  // Grabbing the evaluate button
-  const evaluate = document.getElementsByClassName('evaluate');
-
-  // Evaluate method
-  evaluate[0].addEventListener('click', () => {
     if (selected == true) {
       result[0].innerHTML = 'Correct';
-      result[0].style.color = 'green';
+      result[0].style.color = 'lightGreen';
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
+      op4.style.backgroundColor = 'lightGreen';
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
       lose[0].style.display = 'block';
       winner[0].style.display = 'none';
+      op4.style.backgroundColor = 'Red';
     }
   });
 }
