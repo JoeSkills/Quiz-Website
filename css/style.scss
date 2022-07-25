@@ -101,6 +101,9 @@ html {
   margin: 0 auto;
   border: none;
 }
+*:hover {
+  outline: none;
+}
 .winner-bg {
   transform: translate(50px, 0);
   display: none;
