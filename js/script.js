@@ -9,6 +9,7 @@ const Questions = [
       { text: '1963', isCorrect: false },
       { text: '1979', isCorrect: false },
     ],
+    image: '/images/nigerian-independence.jpg',
   },
   {
     id: 1,
@@ -19,6 +20,7 @@ const Questions = [
       { text: 'Zaria', isCorrect: false },
       { text: 'Lagos', isCorrect: false },
     ],
+    image: '/images/capital.jpg',
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const Questions = [
       { text: 'Yemi Osibanjo', isCorrect: false },
       { text: 'Goodluck Jonathan', isCorrect: false },
     ],
+    image: '/images/president.jpg',
   },
 ];
 
@@ -56,7 +59,14 @@ function iterate(id) {
 
   // Setting the question text
   var num = Number(id) + 1;
+  var img = document.createElement('IMG');
+  img.setAttribute('src', Questions[id].image);
+  img.setAttribute('width', '50');
+  img.setAttribute('height', '50');
+  img.style.margin = '0 auto';
+
   question.innerText = num + '. \n' + Questions[id].q;
+  question.appendChild(img);
 
   // Getting the options
   const op1 = document.getElementById('op1');
