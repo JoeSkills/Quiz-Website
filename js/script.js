@@ -41,6 +41,9 @@ var lose = document.getElementsByClassName('lose-bg');
 // Set start
 var start = true;
 
+var points = 0;
+var count = 0;
+
 // Iterate
 function iterate(id) {
   // Getting the result display section
@@ -74,6 +77,8 @@ function iterate(id) {
 
   var selected = '';
 
+  var score = document.getElementsByClassName('score');
+
   // Show selection for op1
   op1.addEventListener('click', () => {
     op1.style.backgroundColor = 'aqua';
@@ -87,6 +92,10 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op1.style.backgroundColor = 'lightGreen';
+      if (points <= id * points) {
+        points += 5;
+        score[0].innerHTML = points;
+      }
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
@@ -109,6 +118,10 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op2.style.backgroundColor = 'lightGreen';
+      if (points <= id * points) {
+        points += 5;
+        score[0].innerHTML = points;
+      }
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
@@ -131,6 +144,10 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op3.style.backgroundColor = 'lightGreen';
+      if (points <= id * points) {
+        points += 5;
+        score[0].innerHTML = points;
+      }
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
@@ -153,6 +170,10 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op4.style.backgroundColor = 'lightGreen';
+      if (points <= id * points) {
+        points += 5;
+        score[0].innerHTML = points;
+      }
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';

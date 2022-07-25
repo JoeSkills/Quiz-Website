@@ -88,6 +88,21 @@ html {
   margin: 0 auto;
 }
 
+.score {
+  width: 100px;
+  height: 30px;
+  background: #ebf3ff;
+  box-shadow: 10px 10px 20px #b4c1d5, -10px -10px 20px #ffffff;
+  border-radius: 10px;
+  transform: translate(120px, 20px);
+  display: grid;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+}
+
 *:focus {
   outline: none;
 }
