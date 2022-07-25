@@ -49,6 +49,7 @@ function iterate(id) {
   // Getting the result display section
   var result = document.getElementsByClassName('result');
   result[0].innerText = '';
+  count = id + 1;
 
   // Getting the question
   const question = document.getElementById('question');
@@ -92,7 +93,8 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op1.style.backgroundColor = 'lightGreen';
-      if (points <= id * points) {
+
+      if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
       }
@@ -118,7 +120,7 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op2.style.backgroundColor = 'lightGreen';
-      if (points <= id * points) {
+      if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
       }
@@ -144,7 +146,7 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op3.style.backgroundColor = 'lightGreen';
-      if (points <= id * points) {
+      if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
       }
@@ -170,7 +172,7 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op4.style.backgroundColor = 'lightGreen';
-      if (points <= id * points) {
+      if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
       }
