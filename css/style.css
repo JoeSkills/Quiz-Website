@@ -4,6 +4,7 @@ html {
   display: block;
   background: hsl(216deg, 96%, 96%);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .container {
