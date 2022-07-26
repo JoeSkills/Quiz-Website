@@ -2,7 +2,7 @@
 const Questions = [
   {
     id: 0,
-    q: 'when did nigeria gain indenpendence?',
+    q: 'when did nigeria gain indenpendence ?',
     a: [
       { text: '1993', isCorrect: false },
       { text: '1960', isCorrect: true },
@@ -13,7 +13,7 @@ const Questions = [
   },
   {
     id: 1,
-    q: 'What is the capital of nigeria?',
+    q: 'What is the capital of nigeria ?',
     a: [
       { text: 'FCT', isCorrect: true, isSelected: false },
       { text: 'Kaduna', isCorrect: false },
@@ -24,7 +24,7 @@ const Questions = [
   },
   {
     id: 2,
-    q: 'What is the name of the current nigerian president',
+    q: 'What is the name of the current nigerian president ?',
     a: [
       { text: 'Mohammed Buhari', isCorrect: true },
       { text: 'Peter Obi', isCorrect: false },
@@ -32,6 +32,28 @@ const Questions = [
       { text: 'Goodluck Jonathan', isCorrect: false },
     ],
     image: '/images/president.jpg',
+  },
+  {
+    id: 3,
+    q: 'how many tribes are in nigeria ?',
+    a: [
+      { text: '300', isCorrect: false },
+      { text: '200', isCorrect: false },
+      { text: '371', isCorrect: true },
+      { text: '191', isCorrect: false },
+    ],
+    image: '/images/tribes.jpg',
+  },
+  {
+    id: 4,
+    q: 'Who is this ?',
+    a: [
+      { text: 'Mohammed Buhari', isCorrect: false },
+      { text: 'Peter Obi', isCorrect: true },
+      { text: 'Yemi Osibanjo', isCorrect: false },
+      { text: 'Goodluck Jonathan', isCorrect: false },
+    ],
+    image: '/images/peter-obi.jpg',
   },
 ];
 
@@ -46,6 +68,7 @@ var start = true;
 
 var points = 0;
 var count = 0;
+var check = 0;
 
 // Iterate
 function iterate(id) {
@@ -103,10 +126,12 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op1.style.backgroundColor = 'lightGreen';
-
+      check += 1;
+      console.log(points);
       if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
+        console.log(points);
       }
     } else {
       result[0].innerHTML = 'Wrong';
@@ -130,9 +155,11 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op2.style.backgroundColor = 'lightGreen';
+      console.log(points);
       if (points < count * 5) {
         points += 5;
         score[0].innerHTML = points;
+        console.log(points);
       }
     } else {
       result[0].innerHTML = 'Wrong';
@@ -152,7 +179,7 @@ function iterate(id) {
     selected = op3.value;
     if (selected == true) {
       result[0].innerHTML = 'Correct';
-      result[0].style.color = 'lightGreen';
+      result[0].style.color = 'green';
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op3.style.backgroundColor = 'lightGreen';
@@ -203,13 +230,15 @@ if (start) {
 // Next button and method
 const next = document.getElementsByClassName('next')[0];
 var id = 0;
-
+const won = document.getElementsByClassName('won')[0];
 next.addEventListener('click', () => {
   start = false;
-  if (id < 2) {
+  if (id < 4) {
     id++;
     iterate(id);
     console.log(id);
+  } else {
+    won.style.display = 'block';
   }
 });
 next.addEventListener('click', () => {
@@ -229,7 +258,7 @@ next.addEventListener('click', () => {
 const prev = document.getElementsByClassName('prev')[0];
 prev.addEventListener('click', () => {
   start = false;
-  if ((id <= 2) & (id > 0)) {
+  if ((id <= 4) & (id > 0)) {
     id--;
     iterate(id);
     console.log(id);
