@@ -10,6 +10,7 @@ const Questions = [
       { text: '1979', isCorrect: false },
     ],
     image: '/images/nigerian-independence.jpg',
+    isAnswered: 'false',
   },
   {
     id: 1,
@@ -21,6 +22,7 @@ const Questions = [
       { text: 'Lagos', isCorrect: false },
     ],
     image: '/images/capital.jpg',
+    isAnswered: 'false',
   },
   {
     id: 2,
@@ -32,6 +34,7 @@ const Questions = [
       { text: 'Goodluck Jonathan', isCorrect: false },
     ],
     image: '/images/president.jpg',
+    isAnswered: 'false',
   },
   {
     id: 3,
@@ -43,6 +46,7 @@ const Questions = [
       { text: '191', isCorrect: false },
     ],
     image: '/images/tribes.jpg',
+    isAnswered: 'false',
   },
   {
     id: 4,
@@ -54,6 +58,7 @@ const Questions = [
       { text: 'Goodluck Jonathan', isCorrect: false },
     ],
     image: '/images/peter-obi.jpg',
+    isAnswered: 'false',
   },
   {
     id: 5,
@@ -65,6 +70,7 @@ const Questions = [
       { text: 'Adolphus wabara', isCorrect: false },
     ],
     image: '/images/senate.jpg',
+    isAnswered: 'false',
   },
   {
     id: 6,
@@ -76,6 +82,7 @@ const Questions = [
       { text: 'Fireboy', isCorrect: true },
     ],
     image: '/images/fireboy.jpg',
+    isAnswered: 'false',
   },
   {
     id: 7,
@@ -87,6 +94,7 @@ const Questions = [
       { text: 'Beans', isCorrect: false },
     ],
     image: '/images/food.jpg',
+    isAnswered: 'false',
   },
   {
     id: 8,
@@ -98,6 +106,7 @@ const Questions = [
       { text: 'Goodluck Jonathan', isCorrect: false },
     ],
     image: '/images/20-naira.jpg',
+    isAnswered: 'false',
   },
   {
     id: 9,
@@ -109,6 +118,7 @@ const Questions = [
       { text: 'Samsung', isCorrect: true },
     ],
     image: '/images/tech.jpg',
+    isAnswered: 'false',
   },
 ];
 
@@ -182,12 +192,16 @@ function iterate(id) {
       lose[0].style.display = 'none';
       op1.style.backgroundColor = 'lightGreen';
       check += 1;
+
       console.log(points);
-      if (points < count * 5) {
-        points += 5;
-        score[0].innerHTML = points;
-        console.log(points);
-      }
+      console.log(Questions[id].isAnswered == 'false');
+
+      Questions[id].isAnswered = true;
+      points += 5;
+
+      console.log(Questions[id].isAnswered);
+      score[0].innerHTML = points;
+      console.log(points);
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
@@ -211,8 +225,9 @@ function iterate(id) {
       lose[0].style.display = 'none';
       op2.style.backgroundColor = 'lightGreen';
       console.log(points);
-      if (points < count * 5) {
+      if (points < count * 5 && Questions[id].isAnswered == 'false') {
         points += 5;
+        Questions[id].isAnswered = 'true';
         score[0].innerHTML = points;
         console.log(points);
       }
@@ -238,8 +253,9 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op3.style.backgroundColor = 'lightGreen';
-      if (points < count * 5) {
+      if (points < count * 5 && Questions[id].isAnswered == 'false') {
         points += 5;
+        Questions[id].isAnswered = 'true';
         score[0].innerHTML = points;
       }
     } else {
@@ -264,8 +280,9 @@ function iterate(id) {
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op4.style.backgroundColor = 'lightGreen';
-      if (points < count * 5) {
+      if (points < count * 5 && Questions[id].isAnswered == 'false') {
         points += 5;
+        Questions[id].isAnswered = 'true';
         score[0].innerHTML = points;
       }
     } else {
