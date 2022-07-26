@@ -4,6 +4,7 @@ html {
   display: grid;
   background: hsl(216, 96, 96);
   overflow-x: hidden;
+  overflow: scroll;
 }
 .container {
   width: 337px;
