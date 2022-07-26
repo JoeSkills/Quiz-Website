@@ -4,7 +4,7 @@ html {
   display: block;
   background: hsl(216deg, 96%, 96%);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .container {
