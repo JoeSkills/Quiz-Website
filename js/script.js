@@ -55,6 +55,61 @@ const Questions = [
     ],
     image: '/images/peter-obi.jpg',
   },
+  {
+    id: 5,
+    q: 'Who of these has not been a senate president ?',
+    a: [
+      { text: 'Iyorvhia Ayu', isCorrect: false },
+      { text: 'Joseph Wayas', isCorrect: false },
+      { text: 'Arthur Nzeribe', isCorrect: true },
+      { text: 'Adolphus wabara', isCorrect: false },
+    ],
+    image: '/images/senate.jpg',
+  },
+  {
+    id: 6,
+    q: 'What is the name of this person ?',
+    a: [
+      { text: 'Wizkid', isCorrect: false },
+      { text: 'Rema', isCorrect: true },
+      { text: 'Davido', isCorrect: false },
+      { text: 'Fireboy', isCorrect: true },
+    ],
+    image: '/images/fireboy.jpg',
+  },
+  {
+    id: 7,
+    q: 'Which is the only edible food that never goes bad ?',
+    a: [
+      { text: 'Honey', isCorrect: true },
+      { text: 'Tea', isCorrect: false },
+      { text: 'Rice', isCorrect: false },
+      { text: 'Beans', isCorrect: false },
+    ],
+    image: '/images/food.jpg',
+  },
+  {
+    id: 8,
+    q: 'Whose face is on the 20 Naira Note',
+    a: [
+      { text: 'Nnamdi Azikiwe', isCorrect: false },
+      { text: 'Murtala Mohammed', isCorrect: true },
+      { text: 'Yemi Osibanjo', isCorrect: false },
+      { text: 'Goodluck Jonathan', isCorrect: false },
+    ],
+    image: '/images/20-naira.jpg',
+  },
+  {
+    id: 9,
+    q: "What's the name of the biggest tech company in south korea ?",
+    a: [
+      { text: 'Tecno', isCorrect: false },
+      { text: 'Apple', isCorrect: false },
+      { text: 'Google', isCorrect: false },
+      { text: 'Samsung', isCorrect: true },
+    ],
+    image: '/images/tech.jpg',
+  },
 ];
 
 // Grabbbing winner image
@@ -205,7 +260,7 @@ function iterate(id) {
     selected = op4.value;
     if (selected == true) {
       result[0].innerHTML = 'Correct';
-      result[0].style.color = 'lightGreen';
+      result[0].style.color = 'green';
       winner[0].style.display = 'block';
       lose[0].style.display = 'none';
       op4.style.backgroundColor = 'lightGreen';
@@ -233,7 +288,7 @@ var id = 0;
 const won = document.getElementsByClassName('won')[0];
 next.addEventListener('click', () => {
   start = false;
-  if (id < 4) {
+  if (id < 9) {
     id++;
     iterate(id);
     console.log(id);
@@ -258,7 +313,7 @@ next.addEventListener('click', () => {
 const prev = document.getElementsByClassName('prev')[0];
 prev.addEventListener('click', () => {
   start = false;
-  if ((id <= 4) & (id > 0)) {
+  if ((id <= 9) & (id > 0)) {
     id--;
     iterate(id);
     console.log(id);
