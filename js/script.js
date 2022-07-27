@@ -195,13 +195,14 @@ function iterate(id) {
 
       console.log(points);
       console.log(Questions[id].isAnswered == 'false');
+      if (points < count * 5 && Questions[id].isAnswered == 'false') {
+        Questions[id].isAnswered = 'true';
+        points += 5;
 
-      Questions[id].isAnswered = true;
-      points += 5;
-
-      console.log(Questions[id].isAnswered);
-      score[0].innerHTML = points;
-      console.log(points);
+        console.log(Questions[id].isAnswered);
+        score[0].innerHTML = points;
+        console.log(points);
+      }
     } else {
       result[0].innerHTML = 'Wrong';
       result[0].style.color = 'red';
@@ -348,4 +349,14 @@ prev.addEventListener('click', () => {
   op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
   winner[0].style.display = 'none';
   lose[0].style.display = 'none';
+});
+var mode = document.querySelector('.mode');
+mode.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  console.log('friends');
+  if (document.body.classList.contains('dark-theme')) {
+    mode.src = '/images/light-mode.png';
+  } else {
+    mode.src = '/images/dark-mode.png';
+  }
 });
