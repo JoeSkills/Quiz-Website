@@ -370,7 +370,15 @@ mode.addEventListener('click', () => {
   console.log('friends');
   if (document.body.classList.contains('dark-theme')) {
     mode.src = '/images/light-mode.png';
+    op1.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op2.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op3.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op4.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
   } else {
     mode.src = '/images/dark-mode.png';
+    op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op3.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
   }
 });
