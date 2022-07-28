@@ -159,14 +159,12 @@ html {
   src: url("/fonts/Lily.ttf");
 }
 .my-name {
-  transform: translate(70px, 0);
-  margin-top: 40px;
+  transform: translate(70px, 20px);
   font-family: Lily;
 }
 
 .won {
-  transform: translate(70px, 0);
-  margin-top: 40px;
+  transform: translate(70px, 20px);
   font-family: Lily;
   color: green;
   display: none;
