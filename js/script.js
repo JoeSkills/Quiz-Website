@@ -319,12 +319,15 @@ next.addEventListener('click', () => {
   const op2 = document.getElementById('op2');
   const op3 = document.getElementById('op3');
   const op4 = document.getElementById('op4');
-  op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op3.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  winner[0].style.display = 'none';
-  lose[0].style.display = 'none';
+  if (document.body.classList.contains('dark-theme')) {
+  } else {
+    op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op3.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    winner[0].style.display = 'none';
+    lose[0].style.display = 'none';
+  }
 });
 
 // prev button and method
@@ -343,12 +346,15 @@ prev.addEventListener('click', () => {
   const op2 = document.getElementById('op2');
   const op3 = document.getElementById('op3');
   const op4 = document.getElementById('op4');
-  op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op3.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
-  winner[0].style.display = 'none';
-  lose[0].style.display = 'none';
+  if (document.body.classList.contains('dark-theme')) {
+  } else {
+    op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op3.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    op4.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
+    winner[0].style.display = 'none';
+    lose[0].style.display = 'none';
+  }
 });
 var mode = document.querySelector('.mode');
 mode.addEventListener('click', () => {
