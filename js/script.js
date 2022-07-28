@@ -320,6 +320,10 @@ next.addEventListener('click', () => {
   const op3 = document.getElementById('op3');
   const op4 = document.getElementById('op4');
   if (document.body.classList.contains('dark-theme')) {
+    op1.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op2.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op3.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op4.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
   } else {
     op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
     op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
@@ -347,6 +351,10 @@ prev.addEventListener('click', () => {
   const op3 = document.getElementById('op3');
   const op4 = document.getElementById('op4');
   if (document.body.classList.contains('dark-theme')) {
+    op1.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op2.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op3.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
+    op4.style.backgroundColor = 'hsl(217deg, 10%, 16%)';
   } else {
     op1.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
     op2.style.backgroundColor = 'hsl(216deg, 96%, 96%)';
